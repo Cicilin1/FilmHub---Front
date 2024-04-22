@@ -1,5 +1,5 @@
 import { BackgroundImage } from "./style";
-import backgroundImage from '../../assets/star-wars.jpg'
+import backgroundImage from '../../assets/background.jpg'
 
 export const Background = ({ children }) => {
 

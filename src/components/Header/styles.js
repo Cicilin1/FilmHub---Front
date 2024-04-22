@@ -20,7 +20,6 @@ export const Container = styled.div`
         transition: 0.3s;
     }
 
-
     a:hover{
         opacity: 0.7;
     }
@@ -36,7 +35,6 @@ export const Container = styled.div`
     a:hover::after {
         width: 100%;
     }
-
 
     @media screen and (max-width: 700px){
         padding: 2rem 0;
