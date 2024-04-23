@@ -1,11 +1,13 @@
-import { BackgroundImage } from "./style";
+import { BackgroundImage, BackgroundGradient } from "./style";
 import backgroundImage from '../../assets/background.jpg'
 
 export const Background = ({ children }) => {
 
     return (
         <BackgroundImage bgImage={backgroundImage}>
-            {children}
+            <BackgroundGradient>
+                {children}
+            </BackgroundGradient>
         </BackgroundImage>
     )
 }

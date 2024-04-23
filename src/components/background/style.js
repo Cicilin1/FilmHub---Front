@@ -8,3 +8,8 @@ export const BackgroundImage = styled.div`
     background-size: cover;
 
 `
+
+export const BackgroundGradient = styled.div`
+    background: linear-gradient(to top, #111 60%, transparent 100%);
+
+`
