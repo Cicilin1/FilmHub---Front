@@ -1,7 +1,9 @@
-import { Background } from './components/background'
-import { Header } from './components/Header'
-import { Description } from './components/description-movie'
-import { Movies } from './components/movies'
+import { Background } from './components/background';
+import { Header } from './components/Header';
+import { Description } from './components/description-movie';
+import { Movies } from './components/movies';
+import { Video } from './components/video';
+
 
 function App() {
 
@@ -10,6 +12,7 @@ function App() {
       <Header />
       <Description />
       <Movies />
+      <Video />
     </Background>
   )
 }

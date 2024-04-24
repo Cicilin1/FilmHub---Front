@@ -10,6 +10,6 @@ export const BackgroundImage = styled.div`
 `
 
 export const BackgroundGradient = styled.div`
-    background: linear-gradient(to top, #111 60%, transparent 100%);
+    background: linear-gradient(to top, #111 70%, transparent 100%);
 
 `
