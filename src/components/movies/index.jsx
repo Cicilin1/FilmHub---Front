@@ -11,11 +11,11 @@ export const Movies = () => {
             items: 6
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
+            breakpoint: { max: 1260, min: 464 },
             items: 3
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 700, min: 0 },
             items: 1
         }
     };
@@ -35,7 +35,6 @@ export const Movies = () => {
                 <C.Movie src={Image} alt='image movie' />
                 <C.Movie src={Image} alt='image movie' />
             </Carousel>
-
 
             <C.Text>Tv Show</C.Text>
 

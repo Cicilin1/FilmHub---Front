@@ -1,21 +1,21 @@
-import { Player, Youtube } from '@vime/react'; 
+import { Player, Youtube } from '@vime/react';
 import * as C from './styles'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 
-export const Video = () => {
-    return (
-        <C.Container>
-            <C.Button>
-                <AiOutlineArrowLeft />
-                Back
-            </C.Button>
+export const Video = ({ playVideo, handleClosePlayVideo }) => {
+    return playVideo ? (
+            <C.Container>
+                <C.Button onClick={handleClosePlayVideo}>
+                    <AiOutlineArrowLeft />
+                    Back
+                </C.Button>
 
+                <Player>
+                    <Youtube videoId="3n1T3HxHd7Y"></Youtube>
+                </Player>
 
-            <Player>
-                <Youtube video="3n1T3HxHd7Y"></Youtube>
-            </Player>
+            </C.Container>
 
-        </C.Container>
-    );
+        ) : null;
 
 }

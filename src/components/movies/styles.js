@@ -16,6 +16,10 @@ export const Container = styled.div`
         padding: 8px;
         align-items: center;
     }
+
+    @media screen and (min-width:1600px){
+        padding: 30px 100px;
+    }
 `
 
 export const Text = styled.p`
@@ -42,6 +46,4 @@ export const Movie = styled.img`
 
 export const Carousel = styled.div`
     background: blue;
-
-    
 `

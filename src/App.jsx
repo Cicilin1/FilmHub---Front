@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Background } from './components/background';
 import { Header } from './components/Header';
 import { Description } from './components/description-movie';
@@ -6,13 +7,19 @@ import { Video } from './components/video';
 
 
 function App() {
+  const [playVideo, setPlayVideo] = useState(false);
+
+  const handleOpenPlayVideo = () => setPlayVideo(true);
+  const handleClosePlayVideo = () => setPlayVideo(false);
 
   return (
     <Background>
       <Header />
-      <Description />
+      <Description handleOpenPlayVideo={handleOpenPlayVideo}/>
       <Movies />
-      <Video />
+      <Video 
+      playVideo={playVideo}
+      handleClosePlayVideo={handleClosePlayVideo} />
     </Background>
   )
 }
