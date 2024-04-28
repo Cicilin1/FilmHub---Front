@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     padding: 30px 60px;
     width: 100%;
+    
 
     .react-multi-carousel-list {
         background: rgba(103, 101, 113, 0.34);
@@ -19,6 +20,10 @@ export const Container = styled.div`
 
     @media screen and (min-width:1600px){
         padding: 30px 100px;
+    }
+
+    @media screen and (min-width:560px){
+        padding: 20px;
     }
 `
 

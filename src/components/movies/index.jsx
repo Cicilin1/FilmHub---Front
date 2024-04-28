@@ -1,10 +1,8 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import Image from '../../assets/avenders.jpg'
 import * as C from './styles'
 
-export const Movies = () => {
-
+export const Movies = ({ data, handleVideo }) => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -20,46 +18,46 @@ export const Movies = () => {
         }
     };
 
+    const getMovie = (category) => {
+        return data?.movies?.filter((movie) => movie?.category == category)
+    }
 
     return (
         <C.Container>
-            <C.Text>Movies</C.Text>
+            {data?.categories?.map((category) => (
+                <>
+                    <C.Text key={category?.name} id={category?.name} >{category?.name}</C.Text>
+
+                    <Carousel responsive={responsive}>
+                        {
+                            getMovie(category?.type).map((data, index) => (
+                                <C.Movie
+                                    src={data?.imageSmall}
+                                    alt={data?.title}
+                                    key={index}
+                                    onClick={() => handleVideo(data)}
+                                />
+                            ))
+                        }
+
+                    </Carousel>
+                </>
+            ))}
+
+
+            <C.Text id="All">All</C.Text>
 
             <Carousel responsive={responsive}>
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-            </Carousel>
+                {
+                    data?.movies.map((data, index) => (
+                        <C.Movie
+                            src={data?.imageSmall}
+                            alt={data?.title}
+                            key={index}
+                            onClick={() => handleVideo(data)} />
+                    ))
+                }
 
-            <C.Text>Tv Show</C.Text>
-
-            <Carousel responsive={responsive}>
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-            </Carousel>
-
-            <C.Text>All</C.Text>
-
-            <Carousel responsive={responsive}>
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
-                <C.Movie src={Image} alt='image movie' />
             </Carousel>
         </C.Container>
     )
